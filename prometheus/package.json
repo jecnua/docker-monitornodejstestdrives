@@ -1,0 +1,32 @@
+{
+  "name": "example-prometheus",
+  "version": "0.0.1",
+  "main": "src",
+  "description": "Prometheus example",
+  "author": "Based on RisingStack, Inc.",
+  "scripts": {
+    "start": "nodejs src"
+  },
+  "dependencies": {
+    "express": "4.15.3",
+    "prom-client": "9.1.1"
+  },
+  "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RisingStack/example-prometheus-nodejs.git"
+  },
+  "keywords": [
+    "monitoring",
+    "nodejs",
+    "node",
+    "prometheus"
+  ],
+  "author": "Based on RisingStack, Inc. https://github.com/RisingStack/example-prometheus-nodejs.git",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RisingStack/example-prometheus-nodejs/issues"
+  },
+  "homepage": "https://github.com/RisingStack/example-prometheus-nodejs#readme"
+}
