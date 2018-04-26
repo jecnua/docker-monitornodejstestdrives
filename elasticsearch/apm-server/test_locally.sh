@@ -19,7 +19,7 @@ docker run -d \
 
 # Wait until it responds
 echo "Waiting for elasticsearch to start up..."
-until $(curl --output /dev/null --silent --head --fail http://localhost:9200); do
+until curl --output /dev/null --silent --head --fail http://localhost:9200; do
     printf '.'
     sleep 2
 done
