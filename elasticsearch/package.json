@@ -1,0 +1,21 @@
+{
+  "name": "example-es",
+  "version": "0.0.1",
+  "main": "src",
+  "description": "es example",
+  "scripts": {
+    "start": "nodejs src"
+  },
+  "dependencies": {
+    "express": "4.15.3"
+  },
+  "devDependencies": {
+  },
+  "keywords": [
+    "monitoring",
+    "nodejs",
+    "node"
+  ],
+  "author": "",
+  "license": "MIT"
+}
