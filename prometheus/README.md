@@ -17,6 +17,11 @@ They are MIT and I am MIT :)
     $ curl localhost:3001
     $ curl localhost:3001/metrics
 
+# jsonnet lin
+
+    jsonnet -J ~/path/grafonnet-lib nodejs.jsonnet > tmp.tmp
+    sed -e 's/\\u0001//g' tmp.tmp > nodejs.json # BUG?
+
 # Metrics
 
     $ curl -s localhost:3001/metrics | grep -v '#' | sort | uniq
