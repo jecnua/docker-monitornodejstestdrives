@@ -6,12 +6,12 @@
 
 Testing nodejs monitoring.
 
-- https://github.com/nodejs/Release
+- [Node.js Releases](https://github.com/nodejs/Release)
 
 # Implementations
 
 - [Elastic APM (Code + APM client & APM Server & Elasticsearch & Kibana)](./elasticsearch) ![working](https://img.shields.io/badge/status-working-green.svg)
-- Prometheus ![working](https://img.shields.io/badge/status-building-blue.svg)
+- [Prometheus exporter](https://img.shields.io/badge/status-building-blue.svg) ![working](https://img.shields.io/badge/status-working-green.svg)
 
 # TODO
 
@@ -19,4 +19,5 @@ Testing nodejs monitoring.
 - Test all json
 - Test all bash
 - Test docker
+- Add grafana
 - Update to node 6
