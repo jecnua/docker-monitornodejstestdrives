@@ -16,86 +16,91 @@
          "height": "250px",
          "panels": [
             {
-               "cacheTimeout": null,
-               "colorBackground": false,
-               "colorValue": false,
-               "colors": [
-                  "#299c46",
-                  "rgba(237, 129, 40, 0.89)",
-                  "#d44a3a"
-               ],
+               "aliasColors": { },
+               "bars": false,
+               "dashLength": 10,
+               "dashes": false,
                "datasource": "prometheus",
-               "format": "s",
-               "gauge": {
-                  "maxValue": 100,
-                  "minValue": 0,
-                  "show": false,
-                  "thresholdLabels": false,
-                  "thresholdMarkers": true
-               },
+               "fill": 0,
                "gridPos": { },
                "id": 2,
-               "interval": null,
-               "links": [ ],
-               "mappingType": 1,
-               "mappingTypes": [
-                  {
-                     "name": "value to text",
-                     "value": 1
-                  },
-                  {
-                     "name": "range to text",
-                     "value": 2
-                  }
-               ],
-               "maxDataPoints": 100,
-               "nullPointMode": "connected",
-               "nullText": null,
-               "postfix": "",
-               "postfixFontSize": "50%",
-               "prefix": "",
-               "prefixFontSize": "50%",
-               "rangeMaps": [
-                  {
-                     "from": "null",
-                     "text": "N/A",
-                     "to": "null"
-                  }
-               ],
-               "span": 2,
-               "sparkline": {
-                  "fillColor": "rgba(31, 118, 189, 0.18)",
-                  "full": false,
-                  "lineColor": "rgb(31, 120, 193)",
-                  "show": false
+               "legend": {
+                  "alignAsTable": true,
+                  "avg": true,
+                  "current": true,
+                  "max": true,
+                  "min": true,
+                  "rightSide": false,
+                  "show": true,
+                  "total": false,
+                  "values": true
                },
-               "tableColumn": "",
+               "lines": true,
+               "linewidth": 1,
+               "nullPointMode": "null",
+               "percentage": false,
+               "pointradius": 5,
+               "points": false,
+               "renderer": "flot",
+               "repeat": null,
+               "seriesOverrides": [ ],
+               "spaceLength": 10,
+               "span": 6,
+               "stack": false,
+               "steppedLine": false,
                "targets": [
                   {
                      "expr": "nodejs_heap_size_total_bytes{}",
                      "format": "time_series",
                      "intervalFactor": 2,
-                     "legendFormat": ""
+                     "legendFormat": "",
+                     "refId": "A"
                   },
                   {
                      "expr": "nodejs_heap_size_used_bytes{}",
                      "format": "time_series",
                      "intervalFactor": 2,
-                     "legendFormat": ""
+                     "legendFormat": "",
+                     "refId": "B"
                   }
                ],
-               "thresholds": "",
-               "title": "uptime",
-               "type": "singlestat",
-               "valueFontSize": "80%",
-               "valueMaps": [
+               "thresholds": [ ],
+               "timeFrom": null,
+               "timeShift": null,
+               "title": "nodejs memory",
+               "tooltip": {
+                  "shared": true,
+                  "sort": 0,
+                  "value_type": "individual"
+               },
+               "type": "graph",
+               "xaxis": {
+                  "buckets": null,
+                  "mode": "time",
+                  "name": null,
+                  "show": true,
+                  "values": [ ]
+               },
+               "yaxes": [
                   {
-                     "op": "=",
-                     "text": "N/A",
-                     "value": "null"
+                     "decimals": 2,
+                     "format": "bytes",
+                     "label": null,
+                     "logBase": 1,
+                     "max": null,
+                     "min": 0,
+                     "show": true
+                  },
+                  {
+                     "decimals": 2,
+                     "format": "bytes",
+                     "label": null,
+                     "logBase": 1,
+                     "max": null,
+                     "min": 0,
+                     "show": true
                   }
-               ],
-               "valueName": "current"
+               ]
             }
          ],
          "repeat": null,
@@ -110,7 +115,8 @@
    "schemaVersion": 14,
    "style": "dark",
    "tags": [
-      "nodejs"
+      "nodejs",
+      "prometheus"
    ],
    "templating": {
       "list": [ ]
