@@ -4,9 +4,9 @@ const express = require('express')
 const Prometheus = require('prom-client')
 const gcStats = require('prometheus-gc-stats');
 
-// Prometheus.collectDefaultMetrics();
-// const startGcStats = gcStats(Prometheus.register); // gcStats() would have the same effect in this case
-// startGcStats();
+Prometheus.collectDefaultMetrics();
+const startGcStats = gcStats(Prometheus.register); // gcStats() would have the same effect in this case
+startGcStats();
 
 const app = express()
 const port = process.env.PORT || 3001
