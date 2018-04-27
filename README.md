@@ -6,6 +6,8 @@
 
 Testing nodejs monitoring.
 
+- https://github.com/nodejs/Release
+
 # Implementations
 
 - [Elastic APM (Code + APM client & APM Server & Elasticsearch & Kibana)](./elasticsearch) ![working](https://img.shields.io/badge/status-working-green.svg)
@@ -14,3 +16,7 @@ Testing nodejs monitoring.
 # TODO
 
 - Test on 18.04
+- Test all json
+- Test all bash
+- Test docker
+- Update to node 6

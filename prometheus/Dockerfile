@@ -8,9 +8,12 @@ RUN mkdir -p /src
 COPY package.json package.json
 COPY /src/* /src/
 
-# RUN
+# With node 8 you don't need to install npm
 RUN apt-get update && \
-  apt-get install -y npm nodejs && \
+  apt-get install -y curl && \
+  curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+  apt-get update && \
+  apt-get install -y nodejs && \
   npm install
 
 # ENV
