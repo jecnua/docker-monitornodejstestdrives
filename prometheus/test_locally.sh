@@ -20,4 +20,6 @@ docker rm prometheus
 docker run --name prometheus \
   --network nodejs_prom \
   -v "$PWD"/prometheus.yml:/etc/prometheus/prometheus.yml:ro \
-  -d -p 9090:9090 quay.io/prometheus/prometheus
+  -d \
+  -p 9090:9090 \
+  quay.io/prometheus/prometheus:v2.2.1
