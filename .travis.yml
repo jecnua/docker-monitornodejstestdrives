@@ -15,5 +15,5 @@ before_install:
 # - make
 
 script:
-- travis lint
+- echo "y" | travis lint
 - ./test_travis.sh # Will test with shellcheck https://github.com/koalaman/shellcheck#travis-ci
