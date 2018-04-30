@@ -1,3 +1,3 @@
 #!/bin/bash
-export DOCKER_IMAGE=monitor/nodejs
-export URL_REPO=monitor/nodejs
+export DOCKER_IMAGE=jecnua/monitor-nodejs
+export URL_REPO=jecnua/monitor-nodejs
