@@ -8,7 +8,7 @@ language:
 
 # Note 1: Update but never upgrade
 before_install:
-  - gem install travis
+- gem install travis --no-rdoc --no-ri
 # - sudo apt-get update
 # - gem install travis --no-rdoc --no-ri
 # - curl -L https://goss.rocks/install | sudo sh
