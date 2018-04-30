@@ -1,3 +1,6 @@
 #!/bin/bash
 
-for file in $(find . -iname '*.sh' -not -path '*/\.*' -type f); do shellcheck $file; done;
+while IFS= read -r -d '' file
+do
+  shellcheck "$file"
+done <   <(find . -iname '*.sh' -not -path '*/\.*' -type f -print0)

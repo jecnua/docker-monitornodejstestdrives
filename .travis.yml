@@ -12,5 +12,4 @@ before_install:
 
 script:
 # - yes | travis lint
-# - ./test_travis.sh
-- shellcheck *.sh # https://github.com/koalaman/shellcheck#travis-ci
+- ./test_travis.sh # Will test with shellcheck https://github.com/koalaman/shellcheck#travis-ci
