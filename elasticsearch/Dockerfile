@@ -31,7 +31,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
   org.label-schema.vcs-ref=$VCS_REF \
   org.label-schema.version=$VERSION \
   com.jecnua.docker.dockerfile="/Dockerfile" \
-  com.jecnua.license=""
+  com.jecnua.license="MIT"
 
 # ENTRYPOINT ["/usr/bin/nodejs /server.js"]
 CMD [ "npm", "start" ]
