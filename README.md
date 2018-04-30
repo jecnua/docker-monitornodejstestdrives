@@ -17,7 +17,6 @@ Testing nodejs monitoring.
 
 - Test on 18.04
 - Test all json
-- Test all bash
 - Test docker
 - Add grafana
-- Update to node 6
+- Update to node 8

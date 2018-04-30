@@ -4,11 +4,10 @@ MAINTAINER jecnua "fabrizio.sabatini.it@gmail.com"
 
 RUN mkdir -p /src
 
-# COPY
 COPY package.json package.json
 COPY /src/* /src/
+COPY Dockerfile /Dockerfile
 
-# RUN
 RUN apt-get update && \
   apt-get install -y npm nodejs curl wget nano && \
   npm install && \
@@ -24,9 +23,9 @@ ARG VCS_REF
 
 # Metadata
 LABEL org.label-schema.build-date=$BUILD_DATE \
-  org.label-schema.name="" \
-  org.label-schema.description="" \
-  org.label-schema.url="" \
+  org.label-schema.name="monitor-nodejs-elasticapm" \
+  org.label-schema.description="Testing elastic apm monitoring with a nodejs \
+  express application." \
   org.label-schema.vcs-url=$VCS_URL \
   org.label-schema.vcs-ref=$VCS_REF \
   org.label-schema.version=$VERSION \
