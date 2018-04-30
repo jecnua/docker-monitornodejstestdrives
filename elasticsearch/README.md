@@ -16,7 +16,7 @@
 
 ## To build
 
-    Make
+    make
 
 Or
 

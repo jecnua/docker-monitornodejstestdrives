@@ -4,9 +4,9 @@ MAINTAINER jecnua "fabrizio.sabatini.it@gmail.com"
 
 RUN mkdir -p /src
 
-# COPY
 COPY package.json package.json
 COPY /src/* /src/
+COPY Dockerfile /Dockerfile
 
 # With node 8 you don't need to install npm
 RUN apt-get update && \
@@ -26,14 +26,12 @@ ARG VCS_REF
 
 # Metadata
 LABEL org.label-schema.build-date=$BUILD_DATE \
-  org.label-schema.name="" \
-  org.label-schema.description="" \
-  org.label-schema.url="" \
+  org.label-schema.name="monitor-nodejs-prom" \
+  org.label-schema.description="Testing monitoring nodejs with prometheus exporter"  \
   org.label-schema.vcs-url=$VCS_URL \
   org.label-schema.vcs-ref=$VCS_REF \
   org.label-schema.version=$VERSION \
   com.jecnua.docker.dockerfile="/Dockerfile" \
-  com.jecnua.license=""
 
 # ENTRYPOINT ["/usr/bin/nodejs /server.js"]
 CMD [ "npm", "start" ]

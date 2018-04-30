@@ -1,7 +1,7 @@
 # Monitor nodejs vm with prometheus
 
-- https://github.com/siimon/prom-client App metrics
-- https://github.com/SimenB/node-prometheus-gc-stats GC metrics
+- [App metrics](https://github.com/siimon/prom-client)
+- [GC metrics](https://github.com/SimenB/node-prometheus-gc-stats)
 
 All the nodejs code is from [RisingStack/example-prometheus-nodejs](https://github.com/RisingStack/example-prometheus-nodejs)
 
@@ -9,8 +9,8 @@ They are MIT and I am MIT :)
 
 ## To run
 
-    $ docker build . -t jecnua/nodejs-monitor-testapp
-    $ docker run --name nodejs-monitor-testapp -d -p 3001:3001 jecnua/nodejs-monitor-testapp:latest
+    $ docker build . -t jecnua/monitor-nodejs-prom
+    $ docker run --name monitor-nodejs-prom -d -p 3001:3001 jecnua/monitor-nodejs-prom:latest
 
 ## Test it
 
@@ -101,5 +101,5 @@ WARNING: GC metrics collection doesn't work in node4 (ubuntu default - EOL)
 
 ## Delete it
 
-    docker stop nodejs-monitor-testapp
-    docker rm nodejs-monitor-testapp
+    docker stop monitor-nodejs-prom
+    docker rm monitor-nodejs-prom
