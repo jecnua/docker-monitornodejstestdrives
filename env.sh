@@ -1,3 +1,3 @@
 #!/bin/bash
-export DOCKER_IMAGE=docker/monitornodejstestdrive
-export URL_REPO=docker/monitornodejstestdrive
+export DOCKER_IMAGE=monitor/nodejs
+export URL_REPO=monitor/nodejs
