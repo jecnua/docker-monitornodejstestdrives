@@ -5,11 +5,7 @@
 [![](https://images.microbadger.com/badges/commit/jecnua/monitor-nodejs-elasticapm.svg)](https://microbadger.com/images/jecnua/monitor-nodejs-elasticapm "Get your own commit badge on microbadger.com")
 [![](https://images.microbadger.com/badges/license/jecnua/monitor-nodejs-elasticapm.svg)](https://microbadger.com/images/jecnua/monitor-nodejs-elasticapm "Get your own license badge on microbadger.com")
 
-## Dashboard view
-
 ![Dashboard](images/kibana_dash.png)
-
-## Intro
 
 - [Node.js express](https://www.elastic.co/guide/en/apm/agent/nodejs/current/express.html)
 
