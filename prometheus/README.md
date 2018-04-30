@@ -1,5 +1,9 @@
 # Monitor nodejs vm with prometheus
 
+[![](https://images.microbadger.com/badges/image/jecnua/monitor-nodejs-prom.svg)](https://microbadger.com/images/jecnua/monitor-nodejs-prom "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/jecnua/monitor-nodejs-prom.svg)](https://microbadger.com/images/jecnua/monitor-nodejs-prom "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/commit/jecnua/monitor-nodejs-prom.svg)](https://microbadger.com/images/jecnua/monitor-nodejs-prom "Get your own commit badge on microbadger.com")
+
 - [App metrics](https://github.com/siimon/prom-client)
 - [GC metrics](https://github.com/SimenB/node-prometheus-gc-stats)
 
