@@ -10,5 +10,7 @@ Testing nodejs monitoring.
 
 # Implementations
 
+At the moment I have this two implementations working:
+
 - [Elastic APM (Code + APM client & APM Server & Elasticsearch & Kibana)](./elasticsearch) ![working](https://img.shields.io/badge/status-working-green.svg)
-- [Prometheus exporter](https://img.shields.io/badge/status-building-blue.svg) ![working](https://img.shields.io/badge/status-working-green.svg)
+- [Prometheus exporter](./prometheus) ![working](https://img.shields.io/badge/status-working-green.svg)
