@@ -9,6 +9,7 @@ docker network create nodejs_apm
 docker stop es.local
 docker rm es.local
 docker run -d \
+  --rm \
   -p 9200:9200 \
   --name es.local \
   --network nodejs_apm \
@@ -29,6 +30,7 @@ docker stop kibana.local
 docker rm kibana.local
 docker run \
   -d \
+  --rm \
   --name kibana.local \
   -e server.name="localhost" \
   --network nodejs_apm \
@@ -36,11 +38,27 @@ docker run \
   -e ELASTICSEARCH_URL='http://docker.for.mac.localhost:9200' \
   docker.elastic.co/kibana/kibana:6.2.4
 
+  # Wait until it responds
+  echo "Waiting for kibana to start up..."
+  until curl --output /dev/null --silent --head --fail http://localhost:5601; do
+      printf '.'
+      sleep 2
+  done
+  echo " "
+
 docker stop nodejs-monitor-testapp-apm-server
 docker rm nodejs-monitor-testapp-apm-server
 docker run \
+  --rm \
   --name nodejs-monitor-testapp-apm-server \
   --network nodejs_apm \
   -d \
   -p 8200:8200 \
   jecnua/nodejs-monitor-testapp-apm-server
+
+docker run \
+  --rm \
+  --name test \
+  --network nodejs_apm \
+  jecnua/nodejs-monitor-testapp-apm-server \
+  apm-server -E setup.kibana.host=docker.for.mac.localhost:5601 -E output.elasticsearch.hosts=docker.for.mac.localhost:9200 setup --dashboards

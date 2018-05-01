@@ -5,7 +5,14 @@
 
   https://dimitraz.github.io/blog/post/docker-networking/
 
-  apm-server -E setup.kibana.host=docker.for.mac.localhost:5601 -E output.elasticsearch.hosts=docker.for.mac.localhost:9200 setup --dashboards
+  docker --rm -d --name temp
+
+  docker run \
+    --rm \
+    --name test \
+    --network nodejs_apm \
+    jecnua/nodejs-monitor-testapp-apm-server \
+    apm-server -E setup.kibana.host=docker.for.mac.localhost:5601 -E output.elasticsearch.hosts=docker.for.mac.localhost:9200 setup --dashboards
 
 ## To run
 

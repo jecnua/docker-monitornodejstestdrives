@@ -22,10 +22,10 @@ Or
     docker stop jecnua/monitor-nodejs-elasticapm
     docker rm jecnua/monitor-nodejs-elasticapm
     docker run \
-      --name jecnua/monitor-nodejs-elasticapm \
+      --name monitor-nodejs-elasticapm \
       --network nodejs_apm \
       -d -p 3000:3000 \
-      jecnua/jecnua/monitor-nodejs-elasticapm
+      jecnua/monitor-nodejs-elasticapm
 
 ## Test it
 
@@ -34,5 +34,13 @@ Or
 
 ## Delete it
 
-    docker stop jecnua/monitor-nodejs-elasticapm
-    docker rm jecnua/monitor-nodejs-elasticapm
+    docker stop monitor-nodejs-elasticapm
+    docker rm monitor-nodejs-elasticapm
+
+# TODO
+
+- Test on 18.04
+- Test all json
+- Test docker
+- Add grafana
+- Update to node 8

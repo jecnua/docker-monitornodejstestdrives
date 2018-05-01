@@ -107,3 +107,11 @@ WARNING: GC metrics collection doesn't work in node4 (ubuntu default - EOL)
 
     docker stop monitor-nodejs-prom
     docker rm monitor-nodejs-prom
+
+# TODO
+
+- Test on 18.04
+- Test all json
+- Test docker
+- Add grafana
+- Update to node 8

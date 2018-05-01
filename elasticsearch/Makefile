@@ -6,6 +6,31 @@ build: docker_build output
 # Build and push Docker image
 release: docker_build docker_push output
 
+run: clean
+	- apm-server/test_locally.sh
+	docker run \
+		--rm \
+		--name monitor-nodejs-elasticapm \
+		--network nodejs_apm \
+		-d -p 3000:3000 \
+		jecnua/monitor-nodejs-elasticapm:dev-latest
+		@echo http://localhost:3000
+		@echo Open kibana at http://localhost:5601/app/apm
+
+# push_dashboard:
+# 	docker run \
+# 	  --rm \
+# 	  --network nodejs_apm \
+# 	  jecnua/nodejs-monitor-testapp-apm-server \
+# 	  apm-server -E setup.kibana.host=docker.for.mac.localhost:5601 -E output.elasticsearch.hosts=docker.for.mac.localhost:9200 setup --dashboards
+
+clean:
+	- docker stop monitor-nodejs-elasticapm
+	- docker stop es.local
+	- docker stop kibana.local
+	- docker stop nodejs-monitor-testapp-apm-server
+	- docker stop nodejs-monitor-testapp-es
+
 gen-env:
 	./run.sh
 
