@@ -8,7 +8,11 @@ Testing nodejs monitoring.
 
 - [Node.js Releases](https://github.com/nodejs/Release)
 
-# Implementations
+## Personal notes
+
+ - [Node.js monitoring](https://go-talks.appspot.com/github.com/jecnua/notes-presentations/notes/monitoring_and_alerting/nodejs/01-nodejs_monitoring.article)
+
+## Implementations
 
 At the moment I have this two implementations working:
 
