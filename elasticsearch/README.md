@@ -44,3 +44,4 @@ Or
 - Test docker
 - Add grafana
 - Update to node 8
+- Add apm on dependencies not dockerfile

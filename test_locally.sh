@@ -8,3 +8,6 @@ done <   <(find . -iname '*.sh' -not -path '*/\.*' -type f -print0)
 
 # Test travis
 travis lint .travis.yml
+
+# dockerlint
+# validate-npm-package
