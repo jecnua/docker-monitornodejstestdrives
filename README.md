@@ -10,7 +10,7 @@ Testing nodejs monitoring.
 
 ## Personal notes
 
- - [Node.js monitoring](https://go-talks.appspot.com/github.com/jecnua/notes-presentations/notes/monitoring_and_alerting/nodejs/01-nodejs_monitoring.article)
+ - [Node.js monitoring](https://go-talks.appspot.com/github.com/jecnua/notes-presentations/notes/observability/monitoring_and_alerting/nodejs/01-nodejs_monitoring.article)
 
 ## Implementations
 
