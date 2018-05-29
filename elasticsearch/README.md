@@ -15,7 +15,7 @@
 
 Or
 
-    docker build . -t jecnua/jecnua/monitor-nodejs-elasticapm
+    docker build . -t jecnua/monitor-nodejs-elasticapm
 
 ## To run
 
