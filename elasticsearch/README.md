@@ -19,13 +19,8 @@ Or
 
 ## To run
 
-    docker stop jecnua/monitor-nodejs-elasticapm
-    docker rm jecnua/monitor-nodejs-elasticapm
-    docker run \
-      --name monitor-nodejs-elasticapm \
-      --network nodejs_apm \
-      -d -p 3000:3000 \
-      jecnua/monitor-nodejs-elasticapm
+    make build
+    make run
 
 ## Test it
 
