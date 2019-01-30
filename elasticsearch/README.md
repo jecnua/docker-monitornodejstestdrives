@@ -7,25 +7,41 @@
 
 ![Dashboard](images/kibana_dash.png)
 
-- [Node.js express](https://www.elastic.co/guide/en/apm/agent/nodejs/current/express.html)
+-   [Node.js express](https://www.elastic.co/guide/en/apm/agent/nodejs/current/express.html)
 
 ## To build
 
+You can run the container by running:
+
     make
 
-Or
+Or if you don't have make installed:
 
     docker build . -t jecnua/monitor-nodejs-elasticapm
 
+You will also need to build the APM server first :)
+
+    cd apm-server
+    docker build . -t jecnua/nodejs-monitor-testapp-apm-server
+
 ## To run
 
+(OPTIONAL) In case you didn't already build the container:
+
     make build
+
+To run the local test environment:
+
     make run
 
 ## Test it
 
-    curl localhost:3001
+    curl localhost:3000
     while true; do curl localhost:3000; sleep 0.5; done
+
+Add some errors:
+
+  curl localhost:3000/error
 
 ## Delete it
 
@@ -34,9 +50,10 @@ Or
 
 # TODO
 
-- Test on 18.04
-- Test all json
-- Test docker
-- Add grafana
-- Update to node 8
-- Add apm on dependencies not dockerfile
+-   Test on 18.04
+-   Test all json
+-   Test docker
+-   Add grafana
+-   Update to node 8
+-   Add apm on dependencies not dockerfile
+-   fix apm version

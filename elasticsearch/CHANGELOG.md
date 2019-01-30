@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.2.0 (UNRELEASED)
+
+- Updated elasticsearch and kibana to 6.6.0
+- Update to work on linux too
+- Updated base image to Ubuntu 18.04
+
+### BREAKING CHANGES
+
+### Features
+
+### Changes
+
+### Bugfixes
+
+### Known bugs
+
 ## 0.1.0
 
 - Node.js express app works well with elastic APM for node.js

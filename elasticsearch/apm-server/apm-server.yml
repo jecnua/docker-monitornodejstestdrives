@@ -51,7 +51,8 @@ setup.kibana:
 #-------------------------- Elasticsearch output ------------------------------
 output.elasticsearch:
   # Array of hosts to connect to.
-  hosts: ["docker.for.mac.localhost:9200"]
+  # hosts: ["docker.for.mac.localhost:9200"]
+  hosts: ["localhost:9200"] # TODO: FIX ME TO RECOGNISE IT AUTOMATICALLY
 
   # Optional protocol and basic auth credentials.
   #protocol: "https"

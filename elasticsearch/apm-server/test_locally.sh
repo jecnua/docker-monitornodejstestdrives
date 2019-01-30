@@ -3,6 +3,13 @@
 
 export GOSS_WAIT_OPTS="-r 90s -s 1s > /dev/null"
 
+# FOR MAC
+NETWORK='nodejs_apm'
+TARGET_HOST='docker.for.mac.localhost'
+# FOR LINUX
+NETWORK='host'
+TARGET_HOST='localhost'
+
 docker network create nodejs_apm
 
 # Run es but disable xpack.security
@@ -12,11 +19,11 @@ docker run -d \
   --rm \
   -p 9200:9200 \
   --name es.local \
-  --network nodejs_apm \
+  --network $NETWORK \
   -e "xpack.security.enabled=false" \
   -e "http.host=0.0.0.0" \
   -e "transport.host=127.0.0.1" \
-  docker.elastic.co/elasticsearch/elasticsearch:6.2.4
+  docker.elastic.co/elasticsearch/elasticsearch:6.6.0
 
 # Wait until it responds
 echo "Waiting for elasticsearch to start up..."
@@ -33,10 +40,10 @@ docker run \
   --rm \
   --name kibana.local \
   -e server.name="localhost" \
-  --network nodejs_apm \
+  --network $NETWORK \
   -p 5601:5601 \
-  -e ELASTICSEARCH_URL='http://docker.for.mac.localhost:9200' \
-  docker.elastic.co/kibana/kibana:6.2.4
+  -e ELASTICSEARCH_URL="http://$TARGET_HOST:9200" \
+  docker.elastic.co/kibana/kibana:6.6.0
 
   # Wait until it responds
   echo "Waiting for kibana to start up..."
@@ -51,14 +58,15 @@ docker rm nodejs-monitor-testapp-apm-server
 docker run \
   --rm \
   --name nodejs-monitor-testapp-apm-server \
-  --network nodejs_apm \
+  --network $NETWORK \
   -d \
   -p 8200:8200 \
   jecnua/nodejs-monitor-testapp-apm-server
 
+# PUSH DASHBOARD
 docker run \
   --rm \
   --name test \
-  --network nodejs_apm \
+  --network $NETWORK \
   jecnua/nodejs-monitor-testapp-apm-server \
-  apm-server -E setup.kibana.host=docker.for.mac.localhost:5601 -E output.elasticsearch.hosts=docker.for.mac.localhost:9200 setup --dashboards
+  apm-server -E setup.kibana.host=$TARGET_HOST:5601 -E output.elasticsearch.hosts=$TARGET_HOST:9200 setup --dashboards
