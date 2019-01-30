@@ -1,5 +1,6 @@
 # Monitor nodejs application (Express) with elastic APM
 
+![](https://img.shields.io/maintenance/yes/2019.svg)
 [![](https://images.microbadger.com/badges/image/jecnua/monitor-nodejs-elasticapm.svg)](https://microbadger.com/images/jecnua/monitor-nodejs-elasticapm "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/jecnua/monitor-nodejs-elasticapm.svg)](https://microbadger.com/images/jecnua/monitor-nodejs-elasticapm "Get your own version badge on microbadger.com")
 [![](https://images.microbadger.com/badges/commit/jecnua/monitor-nodejs-elasticapm.svg)](https://microbadger.com/images/jecnua/monitor-nodejs-elasticapm "Get your own commit badge on microbadger.com")
@@ -19,7 +20,7 @@ Or if you don't have make installed:
 
     docker build . -t jecnua/monitor-nodejs-elasticapm
 
-You will also need to build the APM server first :)
+You will also need to build the APM server before running the tests :)
 
     cd apm-server
     docker build . -t jecnua/nodejs-monitor-testapp-apm-server
@@ -50,10 +51,9 @@ Add some errors:
 
 # TODO
 
--   Test on 18.04
 -   Test all json
 -   Test docker
 -   Add grafana
 -   Update to node 8
 -   Add apm on dependencies not dockerfile
--   fix apm version
+-   Fix apm version

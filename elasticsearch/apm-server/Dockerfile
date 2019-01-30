@@ -4,7 +4,7 @@ MAINTAINER jecnua "fabrizio.sabatini.it@gmail.com"
 
 # RUN
 RUN apt-get update && \
-  apt-get -y install wget curl nano && \
+  apt-get -y install wget curl nano gnupg2 && \
   wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add - && \
   apt-get install -y apt-transport-https && \
   echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | tee -a /etc/apt/sources.list.d/elastic-6.x.list && \
