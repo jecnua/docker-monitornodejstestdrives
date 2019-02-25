@@ -12,7 +12,7 @@
 
 ## To build
 
-You can run the container by running:
+You build the container by running:
 
     make
 
@@ -25,7 +25,7 @@ You will also need to build the APM server before running the tests :)
     cd apm-server
     docker build . -t jecnua/nodejs-monitor-testapp-apm-server
 
-## To run
+## Run all the containers
 
 (OPTIONAL) In case you didn't already build the container:
 
@@ -35,10 +35,9 @@ To run the local test environment:
 
     make run
 
-## Test it
+## Test by creating some load
 
-    curl localhost:3000
-    while true; do curl localhost:3000; sleep 0.5; done
+    while true; do curl localhost:3000; sleep .0$[ ( $RANDOM % 10 ) + 1 ]s; done
 
 Add some errors:
 
@@ -46,8 +45,7 @@ Add some errors:
 
 ## Delete it
 
-    docker stop monitor-nodejs-elasticapm
-    docker rm monitor-nodejs-elasticapm
+    make clean
 
 # TODO
 

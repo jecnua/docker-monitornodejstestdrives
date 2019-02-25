@@ -9,6 +9,8 @@ TARGET_HOST='docker.for.mac.localhost'
 # FOR LINUX
 NETWORK='host'
 TARGET_HOST='localhost'
+# IMAGES
+ELASTIC_STACK_VERSION='6.6.1'
 
 docker network create nodejs_apm
 
@@ -23,7 +25,7 @@ docker run -d \
   -e "xpack.security.enabled=false" \
   -e "http.host=0.0.0.0" \
   -e "transport.host=127.0.0.1" \
-  docker.elastic.co/elasticsearch/elasticsearch:6.6.0
+  "docker.elastic.co/elasticsearch/elasticsearch:$ELASTIC_STACK_VERSION"
 
 # Wait until it responds
 echo "Waiting for elasticsearch to start up..."
@@ -43,7 +45,7 @@ docker run \
   --network $NETWORK \
   -p 5601:5601 \
   -e ELASTICSEARCH_URL="http://$TARGET_HOST:9200" \
-  docker.elastic.co/kibana/kibana:6.6.0
+  "docker.elastic.co/kibana/kibana:$ELASTIC_STACK_VERSION"
 
   # Wait until it responds
   echo "Waiting for kibana to start up..."

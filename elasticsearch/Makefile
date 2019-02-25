@@ -18,11 +18,11 @@ run: clean
 		@echo Open kibana at http://localhost:5601/app/apm
 
 clean:
-	- docker stop monitor-nodejs-elasticapm
-	- docker stop es.local
-	- docker stop kibana.local
-	- docker stop nodejs-monitor-testapp-apm-server
-	- docker stop nodejs-monitor-testapp-es
+	- docker rm -f es.local
+	- docker rm -f kibana.local
+	- docker rm -f nodejs-monitor-testapp-apm-server
+	- docker rm -f nodejs-monitor-testapp-es
+	- docker rm -f monitor-nodejs-elasticapm
 
 gen-env:
 	./run.sh

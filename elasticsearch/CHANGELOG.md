@@ -1,8 +1,20 @@
 # Changelog
 
-## 0.2.0 (UNRELEASED)
+## 0.3.0 (unreleased)
 
-- Updated elasticsearch and kibana to 6.6.0
+### BREAKING CHANGES
+
+### Features
+
+### Changes
+
+### Bugfixes
+
+### Known bugs
+
+## 0.2.0
+
+- Updated elasticsearch and kibana to 6.6.1
 - Update to work on linux too
 - Updated base image to Ubuntu 18.04
 
