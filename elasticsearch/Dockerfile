@@ -6,10 +6,12 @@ COPY package.json package.json
 COPY /src/* /src/
 COPY Dockerfile /Dockerfile
 
-RUN apt-get update && \
-  apt-get install --no-install-recommends -y npm nodejs curl wget nano && \
-  npm install && \
-  npm install elastic-apm-node@2.5.1 --save
+RUN apt-get update \
+  && apt-get install --no-install-recommends -y npm nodejs curl wget nano \
+  && npm install \
+  && npm install elastic-apm-node@2.5.1 --save \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
 # ENV
 

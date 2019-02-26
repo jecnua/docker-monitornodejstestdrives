@@ -3,6 +3,7 @@
 ![](https://img.shields.io/maintenance/yes/2019.svg)
 [![Build Status](https://travis-ci.org/jecnua/monitor-nodejs.svg?branch=master)](https://travis-ci.org/jecnua/monitor-nodejs)
 ![ubuntu-16.04](https://img.shields.io/badge/ubuntu-16.04-green.svg)
+[![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Testing nodejs monitoring.
 

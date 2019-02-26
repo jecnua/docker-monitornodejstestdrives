@@ -51,6 +51,7 @@ Add some errors:
 
 -   Test all json
 -   Test docker
+-   Add hadolint check on all dockerfile
 -   Add grafana
 -   Update to node 8
 -   Add apm on dependencies not dockerfile

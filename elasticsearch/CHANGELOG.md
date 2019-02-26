@@ -10,6 +10,7 @@
 
 - Removed MAINTAINER
 - Fixed version of npm package and elastic npm
+- Started work on linting the Dockerfile
 
 ### Bugfixes
 
