@@ -1,7 +1,5 @@
 FROM ubuntu:18.04
 
-MAINTAINER jecnua "fabrizio.sabatini.it@gmail.com"
-
 RUN mkdir -p /src
 
 COPY package.json package.json
@@ -9,9 +7,9 @@ COPY /src/* /src/
 COPY Dockerfile /Dockerfile
 
 RUN apt-get update && \
-  apt-get install -y npm nodejs curl wget nano && \
+  apt-get install --no-install-recommends -y npm nodejs curl wget nano && \
   npm install && \
-  npm install elastic-apm-node --save
+  npm install elastic-apm-node@2.5.1 --save
 
 # ENV
 
@@ -21,7 +19,7 @@ ARG VERSION
 ARG VCS_URL
 ARG VCS_REF
 
-# Metadata
+LABEL maintainer="jecnua <fabrizio.sabatini.it@gmail.com>"
 LABEL org.label-schema.build-date=$BUILD_DATE \
   org.label-schema.name="monitor-nodejs-elasticapm" \
   org.label-schema.description="Testing elastic apm monitoring with a nodejs \

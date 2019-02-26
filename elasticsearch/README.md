@@ -41,7 +41,7 @@ To run the local test environment:
 
 Add some errors:
 
-  curl localhost:3000/error
+    while true; do curl 'localhost:3000/error'; sleep $[ ( $RANDOM % 3 ) + 1 ]s; done
 
 ## Delete it
 
@@ -54,4 +54,3 @@ Add some errors:
 -   Add grafana
 -   Update to node 8
 -   Add apm on dependencies not dockerfile
--   Fix apm version

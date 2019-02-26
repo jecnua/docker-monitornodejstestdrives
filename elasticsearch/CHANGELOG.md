@@ -8,6 +8,9 @@
 
 ### Changes
 
+- Removed MAINTAINER
+- Fixed version of npm package and elastic npm
+
 ### Bugfixes
 
 ### Known bugs
