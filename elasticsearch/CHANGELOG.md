@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.4.0 (unreleased)
+
+### BREAKING CHANGES
+
+### Features
+
+### Changes
+
+### Bugfixes
+
+### Known bugs
+
 ## 0.3.0
 
 ### BREAKING CHANGES
