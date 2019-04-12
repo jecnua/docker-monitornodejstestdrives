@@ -22,8 +22,7 @@ Or if you don't have make installed:
 
 You will also need to build the APM server before running the tests :)
 
-    cd apm-server
-    docker build . -t jecnua/nodejs-monitor-testapp-apm-server
+    docker build apm-server/ -t jecnua/nodejs-monitor-testapp-apm-server
 
 ## Run all the containers
 
@@ -35,7 +34,12 @@ To run the local test environment:
 
     make run
 
+This will take a while since it needs to pull down all the dependencies and
+wait for them to start.
+
 ## Test by creating some load
+
+Add some load:
 
     while true; do curl localhost:3000; sleep .0$[ ( $RANDOM % 10 ) + 1 ]s; done
 

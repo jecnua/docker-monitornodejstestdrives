@@ -10,7 +10,7 @@ TARGET_HOST='docker.for.mac.localhost'
 NETWORK='host'
 TARGET_HOST='localhost'
 # IMAGES
-ELASTIC_STACK_VERSION='6.6.1'
+ELASTIC_STACK_VERSION='7.0.0'
 
 docker network create nodejs_apm
 
@@ -22,6 +22,7 @@ docker run -d \
   -p 9200:9200 \
   --name es.local \
   --network $NETWORK \
+  -e xpack.monitoring.collection.enabled="true" \
   -e "xpack.security.enabled=false" \
   -e "http.host=0.0.0.0" \
   -e "transport.host=127.0.0.1" \
@@ -41,11 +42,13 @@ docker run \
   -d \
   --rm \
   --name kibana.local \
+  -e xpack.monitoring.collection.enabled="true" \
   -e server.name="localhost" \
+  -e ELASTICSEARCH_HOSTS="http://$TARGET_HOST:9200" \
   --network $NETWORK \
   -p 5601:5601 \
-  -e ELASTICSEARCH_URL="http://$TARGET_HOST:9200" \
   "docker.elastic.co/kibana/kibana:$ELASTIC_STACK_VERSION"
+  # -e ELASTICSEARCH_URL="http://$TARGET_HOST:9200" \ # in 6.x
 
   # Wait until it responds
   echo "Waiting for kibana to start up..."
@@ -66,9 +69,10 @@ docker run \
   jecnua/nodejs-monitor-testapp-apm-server
 
 # PUSH DASHBOARD
-docker run \
-  --rm \
-  --name test \
-  --network $NETWORK \
-  jecnua/nodejs-monitor-testapp-apm-server \
-  apm-server -E setup.kibana.host=$TARGET_HOST:5601 -E output.elasticsearch.hosts=$TARGET_HOST:9200 setup --dashboards
+# Disabled in 7.0.0
+# docker run \
+#   --rm \
+#   --name test \
+#   --network $NETWORK \
+#   jecnua/nodejs-monitor-testapp-apm-server \
+#   apm-server -E setup.kibana.host=$TARGET_HOST:5601 -E output.elasticsearch.hosts=$TARGET_HOST:9200 setup --dashboards

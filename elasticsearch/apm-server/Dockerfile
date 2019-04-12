@@ -1,12 +1,13 @@
 FROM ubuntu:18.04
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 RUN apt-get update \
-  && apt-get -y --no-install-recommends install wget curl nano gnupg2 apt-transport-https \
+  && apt-get -y --no-install-recommends install wget curl nano gnupg2 apt-transport-https ca-certificates \
   && wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add - \
-  && echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | tee -a /etc/apt/sources.list.d/elastic-6.x.list \
+  && echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | tee -a /etc/apt/sources.list.d/elastic-7.x.list \
   && apt-get update \
-  && apt-get install --no-install-recommends -y apm-server=6.6.1 \
+  && apt-get install --no-install-recommends -y apm-server=7.0.0 \
   && update-rc.d apm-server defaults 95 10 \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*

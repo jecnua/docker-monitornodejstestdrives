@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.3.0 (unreleased)
+## 0.3.0
 
 ### BREAKING CHANGES
 
@@ -11,6 +11,7 @@
 - Removed MAINTAINER
 - Fixed version of npm package and elastic npm
 - Started work on linting the Dockerfile
+- Updated to elasticsearch 7.0
 
 ### Bugfixes
 
