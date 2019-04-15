@@ -3,8 +3,8 @@
 
 export GOSS_WAIT_OPTS="-r 90s -s 1s > /dev/null"
 
-PROMETHEUS_VERSION='v2.8.0'
-GRAFANA_VERSION='6.0.2'
+PROMETHEUS_VERSION='v2.9.0'
+GRAFANA_VERSION='6.1.3'
 
 make
 
